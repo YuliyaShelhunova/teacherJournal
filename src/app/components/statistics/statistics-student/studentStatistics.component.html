@@ -1,0 +1,16 @@
+<table>
+    <tr>
+        <td>
+            <table class="table table-bordered table-dark" style="width: 170px;">
+                <tr *ngFor="let student of students">
+                    <td><a routerLink="/statistics/students/{{student.id}}">{{student.firstName}}
+                            {{student.lastName}}</a></td>
+                </tr>
+            </table>
+        </td>
+
+        <td>
+            <router-outlet></router-outlet>
+        </td>
+    </tr>
+</table>

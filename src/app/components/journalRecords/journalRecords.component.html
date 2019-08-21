@@ -1,0 +1,36 @@
+<h2 style="color: white; margin-bottom: 30px;">{{nameSubject}}</h2>
+
+<div id="loading" *ngIf="loading">
+    <mat-spinner id="loading-image" [mode]="'indeterminate'" [color]="accent"></mat-spinner>
+</div>
+
+<span style="display: inline-table">
+    <table class="table table-bordered table-dark" id="journal">
+        <thead style="background-color: #1f3863;">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Average Mark</th>
+                <th *ngFor="let date of dates"><input type="string" [(ngModel)]="date" style="width: 60px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of records">
+                <td>{{record.firstName}}</td>
+                <td>{{record.lastName}}</td>
+                <td>{{record.averageMark}}</td>
+                <td *ngFor="let rec of record.markOnDate | keyvalue">
+                    <input type="number" min="0" max="10" (change)="updateAverage(record, rec)" [(ngModel)]="rec.value"
+                        style="width: 60px;">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</span>
+<button><img src="../../shared/images/addColumn.png" width="30px" (click)="addColumn()"></button>
+<div>
+    <h4 style="color: white; margin-bottom: 30px;">Teacher</h4>
+    <input type="string" name="teacherName" [(ngModel)]="teacher" #teacherName="ngModel" required />
+    <button [disabled]="teacherName.invalid || records.invalid" class="btn btn-default" style="background-color: #7e7a7a;color: orange;margin-left: 210px;width: 100px;
+        margin-bottom: 20px;" (click)="saveTable(teacher)">Save</button>
+</div>

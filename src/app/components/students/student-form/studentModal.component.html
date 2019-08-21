@@ -1,0 +1,29 @@
+<div style="background-color:#2f2e2e; color: white;">
+    <h2>Add new student: </h2>
+    <div class="form-group">
+        <label>* Name</label>
+        <input type="string" class="form-control" name="studentName" [(ngModel)]="name" #studentName="ngModel" required />
+        <div [hidden]="studentName.valid || studentName.untouched" class="alert alert-danger">
+           Field "Name" is required!
+        </div>
+    </div>
+    <div class="form-group">
+        <label>* Last name</label>
+        <input type="string" class="form-control" name="studentLastName" [(ngModel)]="lastName" #studentLastName="ngModel"
+            required />
+        <div [hidden]="studentLastName.valid || studentLastName.untouched" class="alert alert-danger">
+            Field "Last Name" is required!
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Address</label>
+        <input type="string" class="form-control" name="address" [(ngModel)]="address" />
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea type="string" class="form-control" name="description" [(ngModel)]="description"></textarea>
+    </div>
+
+    <button [disabled]="studentName.invalid || studentLastName.invalid" class="btn btn-default" style="background-color: #7e7a7a;color: orange;margin-left: 210px;width: 100px;
+    margin-bottom: 20px;" (click)="addStudent(name,lastName,address,description)">Add</button>
+</div>

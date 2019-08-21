@@ -1,0 +1,11 @@
+<h3 style="color: white; margin-bottom: 30px;">List of subjects: </h3>
+
+<div style="background-color:#2f2e2e;">
+    <div class="btn-group" *ngFor="let subject of subjects">
+        <button class="subjectButton" data-toggle="modal" data-target="#myModal" routerLink="/subjects/{{subject.id}}/records">{{subject.name}}</button>
+    </div>
+</div>
+<div style="display: grid;">
+    <button class="addButton" data-toggle="modal" data-target="#myModal" title="Add new subject"
+        (click)="openModal()"><img src="../../../shared/images/add-button.png" width="100px"></button>
+</div>

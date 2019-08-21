@@ -1,0 +1,26 @@
+<h2 style="color: white; margin-bottom: 30px;">Students</h2>
+<div>
+    <table class="table table-bordered table-dark">
+        <thead style="background-color: #1f3863;">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <th scope="row">{{student.id}}</th>
+                <td>{{student.firstName}}</td>
+                <td>{{student.lastName}}</td>
+                <td>{{student.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div style="display: grid;">
+    <button class="addButton" data-toggle="modal" data-target="#myModal" title="Add new student"
+        (click)="openModal()"><img src="../../../shared/images/add-button.png" width="100px"></button>
+</div>
