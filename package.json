@@ -26,7 +26,7 @@
     "core-js": "^2.5.4",
     "cors": "^2.8.5",
     "fastify": "^2.6.0",
-    "jquery": "3.4.1",
+    "jquery": "3.5.0",
     "ngx-toastr": "^9.1.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
